@@ -11,6 +11,6 @@ fun century (x : Int){
     }
 }
 fun main () {
-    val year = -1654
+    val year = readln().toInt()
     century(year)
 }
