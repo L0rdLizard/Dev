@@ -1,4 +1,4 @@
-package clock
+package code.clock
 
 class Time(hoursT: Int, minutesT: Int) {
     private var hours = 12

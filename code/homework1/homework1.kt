@@ -1,4 +1,4 @@
-package homework1
+package code.homework1
 
 fun century (x : Int){
     if (x < 0) {

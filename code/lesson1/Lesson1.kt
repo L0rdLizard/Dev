@@ -1,4 +1,4 @@
-package lesson1
+package code.lesson1
 
 fun main(args: Array<String>) {
     println("Hello World!")
