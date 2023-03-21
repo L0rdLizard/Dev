@@ -23,6 +23,7 @@ fun main () {
         |насущным потребностям. Не следует,""".trimMargin()
 
     var table = Array(3, {Array (3, {0})})
+    var table2 : DoubleArray
     table[0] = arrayOf(1, 2, 3)
     table[1] = arrayOf(1, 2, 3)
     table[2] = arrayOf(1, 2, 3)
@@ -44,12 +45,13 @@ fun main () {
 //    for (item in stroka.indices){
 //        println(stroka[item])
 //    }
-//    val backet = arrayOf("banana", 1, "orange", 1, "apple", 1, "mango", 1, "eggs", 6)
-//    var answer = "${backet[8]} ${backet[9]}"
-//    println(answer)
-//    println(backet[backet.size-1])
+    val backet = arrayOf("banana", 1, "orange", 1, "apple", 1, "mango", 1, "eggs", 6)
+    var answer = "${backet[8]} ${backet[9]}"
+    println(answer)
+    println(backet[backet.size-1])
 
-//    println(backet[-1])
+    println(backet)
+
 //    println(name + " " + surname)
 //    println("Hello I m $name $surname")
 //    var balance = 0.0
