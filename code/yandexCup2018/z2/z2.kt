@@ -35,13 +35,5 @@ fun polindrom(string :String){
 
 fun main(){
     val string = "ratacatyabai"
-//    val n1  = "ab"
-//    val n2  = "ab"
-//    if (n1[0].code == n2[0].code){
-//        println("ura")
-//    }
-//    println(n1[0].code)
-//    println(n2[0].code)
-
     polindrom(string)
 }
