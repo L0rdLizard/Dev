@@ -1,7 +1,5 @@
 package code.yandexCup2018.z2
 
-import kotlin.random.Random
-
 fun polindrom(string :String){
     var flag = false
     var result = "No result"
