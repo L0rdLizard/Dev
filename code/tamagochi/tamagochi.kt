@@ -80,6 +80,7 @@ class Tamagochi (tamagochiName : String){
     fun play(){ //поиграть
         if ((happiness + 2) > 9) {
             happiness = 9
+            satiety -=1
             return
         }
         happiness += 2
@@ -126,8 +127,4 @@ class Tamagochi (tamagochiName : String){
 
         printInterface()
     }
-}
-fun main(){
-    val Nastya = Tamagochi("Nastya")
-
 }
