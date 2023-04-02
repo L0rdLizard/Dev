@@ -30,7 +30,8 @@ fun main(){
 //    val sum : Int = lines[1][2].digitToInt()
 //    println(sum)
     println(lines)
-    val result = lines[1].map { it.toInt() }.toIntArray()
+    val str = lines[1]
+    val result = str.map { it.code }
 
     println(result)
 

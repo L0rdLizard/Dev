@@ -1,7 +1,6 @@
 package code.yandexCup2018.z2
 
 fun polindrom(string :String){
-    var flag = false
     var result = "No result"
     for (index in 0..string.length) {
         var tempResult = "No result"
