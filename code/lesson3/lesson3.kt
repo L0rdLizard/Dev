@@ -1,7 +1,5 @@
 package code.lesson3
 
-import javax.xml.stream.events.EndElement
-
 fun main (){
     var array = arrayOf(1, 2, 3, 8, 15, 7, 12)
     array.sort()
