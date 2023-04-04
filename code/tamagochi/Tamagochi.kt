@@ -1,19 +1,19 @@
 package code.tamagochi
 
-class Tamagochi (tamagochiName : String){
+abstract class Tamagochi (tamagochiName : String){
     //9 - это максимум для всех показателей
-    private var name = tamagochiName
-    private var satiety = 9 //сытость
-    private var happiness = 9 //радость
-    private var health = 9 //здоровье
-    private var days = 1
-    private var death = false
+    var name = tamagochiName
+    var satiety = 9 //сытость
+    var happiness = 9 //радость
+    var health = 9 //здоровье
+    var days = 1
+    var alive = true
 
     init {
         while (true){
-            if (death) break
+            if (!alive) break
             inteface()
-            if (death) break
+            if (!alive) break
             println("""
                 |Chose action:
                 |1 - Feed
@@ -24,32 +24,18 @@ class Tamagochi (tamagochiName : String){
                 |""".trimMargin())
 
             when (readln().toInt()) { //chose action
-                1 -> {
-                    feed()
-                    satiety--
-                    days++
-                }
-                2 -> {
-                    heal()
-                    satiety--
-                    days++
-                }
-                3 -> {
-                    play()
-                    satiety--
-                    days++
-                }
-                4 -> {
-                    satiety--
-                    days++
-                }
+                1 -> { feed() }
+                2 -> { heal() }
+                3 -> { play() }
+                4 -> {}
                 5 -> {break}
             }
-//            Thread.sleep(1_000)
+            satiety--
+            days++
         }
-
     }
 
+    open
     fun deathOfTamagochi(){
         for (i in 1..20) println() // оступ для красоты
         println("             (x . x)")
@@ -59,7 +45,7 @@ class Tamagochi (tamagochiName : String){
                 |
                 |             GAME OVER
                 |""".trimMargin())
-        death = true
+        alive = false
     }
     fun feed (){ //покормить
         if ((satiety + 2) > 10) {
@@ -86,7 +72,8 @@ class Tamagochi (tamagochiName : String){
         happiness += 2
         satiety -=1
     }
-    private fun happinessCheck (){ //проверка на счастье
+    open
+    fun happinessCheck (){ //проверка на счастье
         if ((happiness >= 7) && (satiety >= 7) && (health >= 7))
             println("             (◕‿◕)")
         else if ((happiness < 4) || (satiety < 4) || (health < 4))
@@ -94,7 +81,7 @@ class Tamagochi (tamagochiName : String){
         else if ((happiness < 7) || (satiety < 7) || (health < 7))
             println("             (￣ヘ￣)")
     }
-    private fun satietyCheck() :Boolean{ //проверка на сытость
+    fun satietyCheck() :Boolean{ //проверка на сытость
 
         if (satiety <= 0) {
             deathOfTamagochi()
@@ -102,14 +89,14 @@ class Tamagochi (tamagochiName : String){
         }
         return false
     }
-    private fun healthCheck () :Boolean{ //проверка на здорвье
+    fun healthCheck () :Boolean{ //проверка на здорвье
         if (health <= 0) {
             deathOfTamagochi()
             return true
         }
         return false
     }
-    private fun printInterface(){ // вывести окно игры
+    fun printInterface(){ // вывести окно игры
         println("""
             |            $name             
             |\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -119,7 +106,7 @@ class Tamagochi (tamagochiName : String){
             |\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
         """.trimMargin())
     }
-    private fun inteface(){ //интерфейс игры
+    fun inteface(){ //интерфейс игры
         for (i in 1..20) println() // оступ для красоты
         if (satietyCheck()) return
         if (healthCheck()) return
