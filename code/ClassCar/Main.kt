@@ -1,4 +1,4 @@
-package code.lesson5
+package code.ClassCar
 
 fun main(){
     val BMW = Car()

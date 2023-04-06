@@ -1,4 +1,4 @@
-package code.lesson5
+package code.ClassCar
 
 class Car(){
     val wheels = 4

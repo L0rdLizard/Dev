@@ -1,4 +1,4 @@
-package code.lesson4
+package code.RegexTest
 
 fun intCheck(input : String) : Boolean{
     val regex = Regex("[^?:a-zA-Z|\\s]+")

@@ -1,4 +1,4 @@
-package code.lesson3
+package code.TestsWithArrays
 
 fun main (){
     var array = arrayOf(1, 2, 3, 8, 15, 7, 12)
